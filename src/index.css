@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+@layer base {
+  body {
+    /* Deep dark background with a subtle ambient glow */
+    @apply bg-[#0a0a0a] text-gray-200 antialiased;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(220, 20%, 15%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(260, 20%, 12%, 1) 0px, transparent 50%);
+    background-attachment: fixed;
+    color-scheme: dark;
+  }
+
+  /* Make scrollbars fit the dark theme */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-white/10 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-white/20; }
+}
+
+@layer components {
+  /* Reusable glassmorphism utility */
+  .glass-panel {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] shadow-2xl;
+  }
+  
+  /* Input overrides for dark mode */
+  input, select, textarea {
+    @apply bg-white/5 border-white/10 text-gray-100 focus:ring-blue-500/50 focus:border-blue-500/50 focus:bg-white/10 placeholder-gray-500 transition-all;
+  }
+}
