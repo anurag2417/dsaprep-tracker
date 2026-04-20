@@ -15,6 +15,7 @@ const QuestionDetailPage = lazy(() => import('./pages/QuestionDetailPage'));
 const CompanyTrackerPage = lazy(() => import('./pages/CompanyTrackerPage'));
 const GoalsPage = lazy(() => import('./pages/GoalsPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+const LandingPage = lazy(() => import('./pages/LandingPage'));
 
 
 const AppLayout = ({ children }) => (
@@ -36,9 +37,10 @@ export const App = () => {
           <Toaster position="top-right" />
           <Suspense fallback={<div className="flex h-screen items-center justify-center"><Spinner size="lg" /></div>}>
             <Routes>
+              <Route path="/" element={<LandingPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route element={<ProtectedRoute />}>
-                <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                
                 <Route path="/dashboard" element={<AppLayout><DashboardPage /></AppLayout>} />
                 <Route path="/questions" element={<AppLayout><QuestionBankPage /></AppLayout>} />
                 <Route path="/questions/:id" element={<AppLayout><QuestionDetailPage /></AppLayout>} />
