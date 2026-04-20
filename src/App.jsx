@@ -16,10 +16,9 @@ const CompanyTrackerPage = lazy(() => import('./pages/CompanyTrackerPage'));
 const GoalsPage = lazy(() => import('./pages/GoalsPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
-// ... (imports remain the same)
 
 const AppLayout = ({ children }) => (
-  <div className="min-h-screen flex flex-col selection:bg-blue-500/30">
+  <div className="h-screen flex flex-col selection:bg-blue-500/30">
     <Navbar />
     <div className="flex flex-1 overflow-hidden">
       <Sidebar />
@@ -28,7 +27,6 @@ const AppLayout = ({ children }) => (
   </div>
 );
 
-// ... (App component remains exactly the same)
 
 export const App = () => {
   return (
