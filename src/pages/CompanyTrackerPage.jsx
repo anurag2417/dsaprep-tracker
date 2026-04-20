@@ -22,10 +22,10 @@ export const CompanyTrackerPage = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto space-y-6">
-      <h1 className="text-2xl font-bold text-gray-900">Target Companies</h1>
+    <div className="max-w-7xl mx-auto space-y-6 animate-fade-in">
+      <h1 className="text-2xl font-bold text-gray-100">Target Companies</h1>
       {companies.length === 0 ? (
-        <div className="bg-white p-8 rounded-xl border border-gray-200 text-center text-gray-500 shadow-sm">
+        <div className="glass-panel p-8 rounded-2xl text-center text-gray-400">
           No companies tagged in your question bank yet.
         </div>
       ) : (
@@ -34,12 +34,12 @@ export const CompanyTrackerPage = () => {
             <div
               key={c.name}
               onClick={() => handleCompanyClick(c.name)}
-              className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 cursor-pointer hover:shadow-md hover:border-blue-300 transition-all group"
+              className="glass-panel p-5 rounded-2xl cursor-pointer hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_8px_30px_rgb(0,0,0,0.4)] transition-all duration-300 group"
             >
-              <h3 className="text-lg font-extrabold text-gray-900 group-hover:text-blue-600 transition-colors">{c.name}</h3>
-              <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center text-sm">
-                <span className="font-medium text-gray-600">{c.total} {c.total === 1 ? 'Question' : 'Questions'}</span>
-                <span className="font-bold text-green-600 bg-green-50 px-2 py-1 rounded">{Math.round((c.confident / c.total) * 100)}% Mastered</span>
+              <h3 className="text-lg font-extrabold text-gray-100 group-hover:text-blue-400 transition-colors">{c.name}</h3>
+              <div className="mt-4 pt-4 border-t border-white/5 flex justify-between items-center text-sm">
+                <span className="font-medium text-gray-400">{c.total} {c.total === 1 ? 'Question' : 'Questions'}</span>
+                <span className="font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-1 rounded-md">{Math.round((c.confident / c.total) * 100)}% Mastered</span>
               </div>
             </div>
           ))}

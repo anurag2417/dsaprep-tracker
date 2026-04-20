@@ -14,9 +14,10 @@ export const QuestionBankPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="max-w-7xl mx-auto h-full relative pb-20">
+    <div className="max-w-7xl mx-auto h-full relative pb-20 animate-fade-in">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Question Bank</h1>
+        {/* Fixed header text color here */}
+        <h1 className="text-2xl font-bold text-gray-100">Question Bank</h1>
         <Button onClick={() => setIsModalOpen(true)} className="hidden md:inline-flex">+ Add Question</Button>
       </div>
       
