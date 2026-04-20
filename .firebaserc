@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "prepzone-e7260"
-  }
+  },
+  "targets": {
+    "prepzone-e7260": {
+      "hosting": {
+        "dsaprep": [
+          "dsaprep-tracker"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
