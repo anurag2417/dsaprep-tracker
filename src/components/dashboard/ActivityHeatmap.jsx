@@ -29,7 +29,7 @@ export const ActivityHeatmap = () => {
             <div
               key={day}
               title={`${day}: ${count} questions practiced`}
-              className={`w-5 h-5 rounded-[4px] cursor-help transition-all duration-300 hover:scale-110 ${bgColor}`}
+              className={`w-5 h-5 rounded-r-sm cursor-help transition-all duration-300 hover:scale-110 ${bgColor}`}
             />
           );
         })}
@@ -37,10 +37,10 @@ export const ActivityHeatmap = () => {
       <div className="flex items-center justify-end text-xs text-gray-500 gap-2 mt-2 font-medium">
         <span>Less</span>
         <div className="flex gap-1.5">
-          <div className="w-3 h-3 rounded-[2px] bg-white/5 border border-white/5"></div>
-          <div className="w-3 h-3 rounded-[2px] bg-emerald-500/40"></div>
-          <div className="w-3 h-3 rounded-[2px] bg-emerald-500/70"></div>
-          <div className="w-3 h-3 rounded-[2px] bg-emerald-400"></div>
+          <div className="w-3 h-3 rounded-xs bg-white/5 border border-white/5"></div>
+          <div className="w-3 h-3 rounded-xs bg-emerald-500/40"></div>
+          <div className="w-3 h-3 rounded-xs bg-emerald-500/70"></div>
+          <div className="w-3 h-3 rounded-xs  bg-emerald-400"></div>
         </div>
         <span>More</span>
       </div>

@@ -6,7 +6,7 @@ export const StreakCard = () => {
   const { currentStreak, todayCount } = useStreak(questions);
 
   return (
-    <div className="glass-panel bg-gradient-to-r from-orange-500/10 to-red-500/5 p-6 rounded-2xl border-orange-500/20 flex items-center justify-between">
+    <div className="glass-panel bg-linear-to-r from-orange-500/10 to-red-500/5 p-6 rounded-2xl border-orange-500/20 flex items-center justify-between">
       <div>
         <h3 className="text-lg font-bold text-orange-400">Current Streak</h3>
         <p className="text-sm text-orange-200/60 font-medium mt-1">You've practiced {todayCount} question(s) today</p>
