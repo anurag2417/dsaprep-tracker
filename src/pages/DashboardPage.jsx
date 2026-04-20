@@ -17,48 +17,50 @@ export const DashboardPage = () => {
     .slice(0, 5);
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto">
-      <h1 className="text-2xl font-bold text-gray-900">Overview</h1>
+    <div className="space-y-6 max-w-7xl mx-auto animate-fade-in">
+      <h1 className="text-2xl font-bold text-gray-100">Overview</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
           <StreakCard />
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 h-96 flex flex-col">
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Topic Confidence</h3>
+          <div className="glass-panel p-6 rounded-2xl h-96 flex flex-col">
+            <h3 className="text-lg font-bold text-gray-100 mb-2">Topic Confidence</h3>
             <div className="flex-1 min-h-0"><TopicCoverageChart /></div>
           </div>
         </div>
         <div className="space-y-6">
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-            <h3 className="text-lg font-bold text-gray-900 mb-4">Activity Map (28 Days)</h3>
+          <div className="glass-panel p-6 rounded-2xl">
+            <h3 className="text-lg font-bold text-gray-100 mb-4">Activity Map (28 Days)</h3>
             <ActivityHeatmap />
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-            <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center"><span className="mr-2 text-red-500">⚠️</span> Weak Topics</h3>
+          <div className="glass-panel p-6 rounded-2xl">
+            <h3 className="text-lg font-bold text-gray-100 mb-4 flex items-center"><span className="mr-2 text-red-400">⚠️</span> Weak Topics</h3>
             {weakTopics.length > 0 ? (
               <div className="flex flex-wrap gap-2">
                 {weakTopics.map(topic => (
-                  <span key={topic} className="text-sm font-medium text-red-700 bg-red-50 px-3 py-1.5 rounded-md border border-red-100">{topic}</span>
+                  <span key={topic} className="text-sm font-medium text-red-400 bg-red-500/10 border border-red-500/20 px-3 py-1.5 rounded-md">{topic}</span>
                 ))}
               </div>
-            ) : <p className="text-sm text-gray-500">Great job! No weak topics identified yet.</p>}
+            ) : <p className="text-sm text-gray-400">Great job! No weak topics identified yet.</p>}
           </div>
         </div>
       </div>
-      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-        <h3 className="text-lg font-bold text-gray-900 mb-4">Recent Practice Sessions</h3>
+      <div className="glass-panel p-6 rounded-2xl">
+        <h3 className="text-lg font-bold text-gray-100 mb-4">Recent Practice Sessions</h3>
         {recentActivity.length > 0 ? (
-          <div className="divide-y divide-gray-100">
+          <div className="divide-y divide-white/10">
             {recentActivity.map((activity, idx) => (
-              <div key={idx} className="flex justify-between items-center py-3 first:pt-0 last:pb-0">
-                <Link to={`/questions/${activity.id}`} className="text-blue-600 hover:text-blue-800 font-medium hover:underline">{activity.title}</Link>
+              <div key={idx} className="flex justify-between items-center py-4 first:pt-0 last:pb-0">
+                <Link to={`/questions/${activity.id}`} className="text-blue-400 hover:text-blue-300 font-medium hover:underline transition-colors">{activity.title}</Link>
                 <div className="flex items-center gap-4">
-                  <span className="text-sm text-gray-500 font-mono">{activity.time}s</span>
-                  <span className="text-sm font-medium text-gray-600 bg-gray-50 px-2 py-1 rounded">{isToday(activity.practiceDate) ? 'Today' : new Date(activity.practiceDate).toLocaleDateString()}</span>
+                  <span className="text-sm text-gray-400 font-mono">{activity.time}s</span>
+                  <span className="text-sm font-medium text-gray-300 bg-white/5 border border-white/10 px-2.5 py-1 rounded-md">
+                    {isToday(activity.practiceDate) ? 'Today' : new Date(activity.practiceDate).toLocaleDateString()}
+                  </span>
                 </div>
               </div>
             ))}
           </div>
-        ) : <p className="text-sm text-gray-500">No recent activity recorded.</p>}
+        ) : <p className="text-sm text-gray-400">No recent activity recorded.</p>}
       </div>
     </div>
   );

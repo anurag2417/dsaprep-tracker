@@ -13,11 +13,15 @@ export const TopicCoverageChart = () => {
     <div className="h-72 w-full">
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart cx="50%" cy="50%" outerRadius="75%" data={data}>
-          <PolarGrid stroke="#e5e7eb" />
-          <PolarAngleAxis dataKey="topic" tick={{ fill: '#4b5563', fontSize: 11, fontWeight: 500 }} />
-          <PolarRadiusAxis angle={30} domain={[0, 100]} tick={{ fill: '#9ca3af', fontSize: 10 }} />
-          <Radar name="Confidence %" dataKey="percent" stroke="#3b82f6" strokeWidth={2} fill="#60a5fa" fillOpacity={0.5} />
-          <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
+          {/* Changed grid and text colors for dark mode */}
+          <PolarGrid stroke="rgba(255,255,255,0.1)" />
+          <PolarAngleAxis dataKey="topic" tick={{ fill: '#9ca3af', fontSize: 11, fontWeight: 500 }} />
+          <PolarRadiusAxis angle={30} domain={[0, 100]} tick={{ fill: '#6b7280', fontSize: 10 }} />
+          <Radar name="Confidence %" dataKey="percent" stroke="#60a5fa" strokeWidth={2} fill="#3b82f6" fillOpacity={0.4} />
+          <Tooltip 
+            contentStyle={{ backgroundColor: '#111', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '12px', color: '#fff' }} 
+            itemStyle={{ color: '#60a5fa' }}
+          />
         </RadarChart>
       </ResponsiveContainer>
     </div>

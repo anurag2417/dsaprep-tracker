@@ -7,7 +7,7 @@ export const Navbar = () => {
   return (
     <nav className="glass-panel px-6 py-4 flex justify-between items-center z-10 sticky top-0 border-b-white/10">
       <div className="flex items-center space-x-2">
-        <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 tracking-tighter">
+        <span className="text-2xl font-black text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-400 tracking-tighter">
           DSAPrep
         </span>
       </div>
